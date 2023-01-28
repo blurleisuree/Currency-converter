@@ -5,7 +5,7 @@ $(document).ready(function () {
     const swapBtn = $(".swap-btn");
 
     swapBtn.css("transition", "all 0.25s ease-out");
-
+     
     let click = false, // Проверка был ли клик
         rotate = 0;
 
@@ -25,14 +25,17 @@ $(document).ready(function () {
 
         // тут должен быть скрипт для сваппа
 
-        rotate += 90;
+        if (click == true) { // Чтобы клики подряд правильно отображались
+            rotate += 180
+        } else {
+            rotate += 90;
+        }
         $(swapBtn).css("transform", `rotate(${rotate}deg)`);
         click = true;
     }
 
     swapBtn.click(swapClick)
+    //
 
-    // 
 
-    
 });
