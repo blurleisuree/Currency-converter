@@ -5,7 +5,7 @@ $(document).ready(function () {
     const swapBtn = $(".swap-btn");
 
     swapBtn.css("transition", "all 0.25s ease-out");
-     
+
     let click = false, // Проверка был ли клик
         rotate = 0;
 
@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     let swapClick = () => {
 
-        // тут должен быть скрипт для сваппа
+        leftBlockSwap();
 
         if (click == true) { // Чтобы клики подряд правильно отображались
             rotate += 180
@@ -34,8 +34,21 @@ $(document).ready(function () {
         click = true;
     }
 
-    swapBtn.click(swapClick)
-    //
+    let leftBlockSwap = () => {
 
+        let interim; // Промежуточная перменная
+
+        let currencyBlock1 = $(".currency-block")[0],
+            currencyBlock2 = $(".currency-block")[1];
+
+        let currencyBlockLeft = $(".currency-block__left")[0],
+            currencyBlockRight = $(".currency-block__left")[1];
+
+        interim = currencyBlockRight;
+        currencyBlock2.prepend(currencyBlockLeft)
+        currencyBlock1.prepend(interim)
+    }
+
+    swapBtn.click(swapClick)
 
 });
