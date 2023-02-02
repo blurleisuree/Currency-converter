@@ -1,5 +1,34 @@
 $(document).ready(function () {
 
+    // Вставка даты последнего обновления базы данных ----------------------------------
+
+    const date = $(".converter__date")[0];
+
+    $.ajax({
+        url: "https://www.cbr-xml-daily.ru/daily_json.js",
+        method: "get",
+        dataType: "json",
+        error: function () {
+            console.log("error")
+        },
+        success: function (data) {
+            let dateJson = new Date(data.Timestamp)
+            let options = {
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric',
+                timezone: 'UTC',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
+            }
+            dateJson = dateJson.toLocaleString("ru", options)
+
+            dateJson = $(date).text() + dateJson;
+            $(date).text(dateJson)
+        }
+    })
+
     // Swap --------------------------------------------------------------------------
 
     const swapBtn = $(".swap-btn");
@@ -24,6 +53,8 @@ $(document).ready(function () {
     let swapClick = () => {
 
         leftBlockSwap();
+
+        // Тут должен быть скрипт для свапа курсов валют
 
         if (click == true) { // Чтобы клики подряд правильно отображались
             rotate += 180
@@ -50,5 +81,7 @@ $(document).ready(function () {
     }
 
     swapBtn.click(swapClick)
+
+    //
 
 });
