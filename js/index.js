@@ -82,6 +82,37 @@ $(document).ready(function () {
 
     swapBtn.click(swapClick)
 
-    //
+    // Меню выбора валюты 
+
+
+    async function valuteArrCreate() {
+        let valuteArr = [];
+
+        await $.ajax({
+            url: "https://www.cbr-xml-daily.ru/daily_json.js",
+            method: "get",
+            dataType: "json",
+            error: function () {
+                console.log("error")
+            },
+            success: function (data) {
+
+                $.each(data.Valute, function (key, value) {
+                    valuteArr.push({
+                        abb: `${value.CharCode}`,
+                        name: `${value.Name}`
+                    })
+                })
+                return valuteArr
+            }
+        })
+
+        return valuteArr
+    }
+
+    valuteArrCreate().then(function (result) {
+        // код для меню выбора валюты
+    })
+
 
 });
