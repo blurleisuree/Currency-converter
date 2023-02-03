@@ -78,6 +78,11 @@ $(document).ready(function () {
         interim = currencyBlockRight;
         currencyBlock2.prepend(currencyBlockLeft)
         currencyBlock1.prepend(interim)
+
+        // Смена аттрибута для меню
+        let dataCurrencyBlockList = $(".currency-block__left");
+        $(dataCurrencyBlockList[0]).attr("data-attr", 1);
+        $(dataCurrencyBlockList[1]).attr("data-attr", 2);
     }
 
     swapBtn.click(swapClick)
@@ -116,7 +121,7 @@ $(document).ready(function () {
         const currencyBlock1 = $(".currency-block__left")[0],
             currencyBlock2 = $(".currency-block__left")[1],
             currencyBlockList = $(".currency-block__left"),
-            menu = $(".valute-menu")[0];
+            menu = $(".valute-menu");
 
         $.each(valuteArr, function (key, value) {
             $(menu).append("<div class='valute-menu__item'></div>");
@@ -128,7 +133,47 @@ $(document).ready(function () {
             $(valuteItem).append(`<div class='valute-menu__abb'>${value.abb}</div>`)
         })
 
-        
+        $(document).click(function (e) {
+            if ($(menu).css("display") == "flex") { // Закрытие меню
+
+                if (currencyBlockList.is(e.target) ||
+                    currencyBlockList.has(e.target).length === 1) { // Проверка был ли клик на соседний блок
+                    $(menu).removeAttr("style"); // обнуление прошлых top & bottom
+                    
+                    if ($(e.target).attr('data-attr') == 1 || $(e.target).closest(".currency-block__left").attr("data-attr") == 1) {
+                        $(menu).css("top", 0)
+                    } else {
+                        $(menu).css("bottom", 0)
+                    }
+                    $(menu).css('display', "flex") // из за обнуления стилей до этого
+                    return
+                }
+
+                if (!menu.is(e.target) && menu.has(e.target).length === 0) {
+                    $(menu).css("display", "none");
+                }
+
+            } else if (currencyBlockList.is(e.target) || // Код для открытия меню
+                currencyBlockList.has(e.target).length === 1) { // второе условие это проверка на клик по дочернему элементу
+
+                $(menu).removeAttr("style"); // обнуление прошлых top & bottom
+                $(menu).css("display", "flex");
+
+                // Проверка по какому из блоков клик
+                if ($(e.target).attr('data-attr') == 1 || $(e.target).closest(".currency-block__left").attr("data-attr") == 1) {
+                    $(menu).css("top", 0)
+                } else {
+                    $(menu).css("bottom", 0)
+                }
+            } else {
+                console.log(false)
+            }
+        })
+
+
+
     })
+
+
 
 });
