@@ -110,9 +110,25 @@ $(document).ready(function () {
         return valuteArr
     }
 
-    valuteArrCreate().then(function (result) {
+    valuteArrCreate().then(function (valuteArr) {
         // код для меню выбора валюты
-    })
 
+        const currencyBlock1 = $(".currency-block__left")[0],
+            currencyBlock2 = $(".currency-block__left")[1],
+            currencyBlockList = $(".currency-block__left"),
+            menu = $(".valute-menu")[0];
+
+        $.each(valuteArr, function (key, value) {
+            $(menu).append("<div class='valute-menu__item'></div>");
+
+            let valuteItem = $('.valute-menu__item');
+            valuteItem = valuteItem[valuteItem.length - 1];
+
+            $(valuteItem).append(`<div class='valute-menu__name'>${value.name}</div>`)
+            $(valuteItem).append(`<div class='valute-menu__abb'>${value.abb}</div>`)
+        })
+
+        
+    })
 
 });
