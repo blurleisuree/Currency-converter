@@ -87,8 +87,7 @@ $(document).ready(function () {
 
     swapBtn.click(swapClick)
 
-    // Меню выбора валюты 
-
+    // Меню выбора валюты -------------------------------------------------------
 
     async function valuteArrCreate() {
         let valuteArr = [];
@@ -108,6 +107,13 @@ $(document).ready(function () {
                         name: `${value.Name}`
                     })
                 })
+
+                // Добавление RUB в массив
+                valuteArr.unshift({
+                    abb: "RUB",
+                    name: "Российский рубль"
+                })
+
                 return valuteArr
             }
         })
@@ -139,13 +145,62 @@ $(document).ready(function () {
                 if (currencyBlockList.is(e.target) ||
                     currencyBlockList.has(e.target).length === 1) { // Проверка был ли клик на соседний блок
                     $(menu).removeAttr("style"); // обнуление прошлых top & bottom
-                    
+
                     if ($(e.target).attr('data-attr') == 1 || $(e.target).closest(".currency-block__left").attr("data-attr") == 1) {
                         $(menu).css("top", 0)
                     } else {
                         $(menu).css("bottom", 0)
                     }
                     $(menu).css('display', "flex") // из за обнуления стилей до этого
+                    return
+                }
+
+                // Код для выбора валюты
+                if (menu.has(e.target).length === 1) {
+                    // Определение текущего блока
+                    let currentCurrencyBlock;
+                    if ($(menu).css("top") == "0px") {
+                        currentCurrencyBlock = currencyBlock1;
+                    } else {
+                        currentCurrencyBlock = currencyBlock2;
+                    };
+
+                    let currentCurrencyBlockAbb = $(currentCurrencyBlock).find(".currency-block__abb").text(),
+                        currentCurrencyBlockName = $(currentCurrencyBlock).find(".currency-block__name-text").text();
+
+                    // Определение выбраной валюты
+                    let selectedItem = $(e.target).closest(".valute-menu__item")[0],
+                        selectedValuteAbb = $(selectedItem).children(".valute-menu__abb").text(),
+                        selectedValuteName = $(selectedItem).children(".valute-menu__name").text();
+
+                    // Выбор уже выбранной валюты
+                    if (selectedValuteAbb == currentCurrencyBlockAbb) {
+                        $(menu).css("display", "none")
+                        return
+                    }
+
+                    // В том случае если выбирается валюта такая же как в соседнем блоке
+                    let nextBlock, nextBlockAbb, nextBlockName;
+                    if ($(currentCurrencyBlock).attr("data-attr") == 1) {
+                        nextBlock = $("[data-attr = 2]");
+                    } else {
+                        nextBlock = $("[data-attr = 1]");
+                    }
+                    nextBlockAbb = $(nextBlock).find(".currency-block__abb");
+                    nextBlockName = $(nextBlock).find(".currency-block__name-text");
+                    if (selectedValuteAbb == $(nextBlockAbb).text()) {
+                        $(nextBlockAbb).text(currentCurrencyBlockAbb);
+                        $(nextBlockName).text(currentCurrencyBlockName);
+                    }
+                    // Установка новых значений
+                    $(currentCurrencyBlock).find(".currency-block__abb").text(selectedValuteAbb)
+                    $(currentCurrencyBlock).find(".currency-block__name-text").text(selectedValuteName)
+
+                    // Тут должен быть код для смены флага
+                    // Тут должен быть код для смены курса
+
+                    //
+                    $(menu).css("display", "none")
                     return
                 }
 
@@ -166,7 +221,7 @@ $(document).ready(function () {
                     $(menu).css("bottom", 0)
                 }
             } else {
-                console.log(false)
+                console.log("nothing")
             }
         })
 

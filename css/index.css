@@ -240,11 +240,12 @@ body {
 .valute-menu {
     width: 100%;
     height: 160px;
-    max-height: 180px;
-    background-color: rgb(65, 65, 65);
+    max-height: 160px;
     position: absolute;
-    display: none;
     flex-direction: column;
+    display: none;
+
+    background-color: rgb(65, 65, 65);
     overflow-y: scroll;
     padding: 15px 12px 15px 15px;
     box-sizing: border-box;
