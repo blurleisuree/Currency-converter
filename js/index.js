@@ -117,7 +117,6 @@ $(document).ready(function () {
                 return valuteArr
             }
         })
-
         return valuteArr
     }
 
@@ -166,7 +165,8 @@ $(document).ready(function () {
                     };
 
                     let currentCurrencyBlockAbb = $(currentCurrencyBlock).find(".currency-block__abb").text(),
-                        currentCurrencyBlockName = $(currentCurrencyBlock).find(".currency-block__name-text").text();
+                        currentCurrencyBlockName = $(currentCurrencyBlock).find(".currency-block__name-text").text(),
+                        currentCurrencyBlockFlag = $(currentCurrencyBlock).find("img").attr("src");
 
                     // Определение выбраной валюты
                     let selectedItem = $(e.target).closest(".valute-menu__item")[0],
@@ -180,7 +180,7 @@ $(document).ready(function () {
                     }
 
                     // В том случае если выбирается валюта такая же как в соседнем блоке
-                    let nextBlock, nextBlockAbb, nextBlockName;
+                    let nextBlock, nextBlockAbb, nextBlockName, nextBlockFlag;
                     if ($(currentCurrencyBlock).attr("data-attr") == 1) {
                         nextBlock = $("[data-attr = 2]");
                     } else {
@@ -188,16 +188,30 @@ $(document).ready(function () {
                     }
                     nextBlockAbb = $(nextBlock).find(".currency-block__abb");
                     nextBlockName = $(nextBlock).find(".currency-block__name-text");
+                    nextBlockFlag = $(nextBlock).find("img");
                     if (selectedValuteAbb == $(nextBlockAbb).text()) {
                         $(nextBlockAbb).text(currentCurrencyBlockAbb);
                         $(nextBlockName).text(currentCurrencyBlockName);
+                        $(nextBlockFlag).attr("src", currentCurrencyBlockFlag);
                     }
                     // Установка новых значений
                     $(currentCurrencyBlock).find(".currency-block__abb").text(selectedValuteAbb)
                     $(currentCurrencyBlock).find(".currency-block__name-text").text(selectedValuteName)
 
-                    // Тут должен быть код для смены флага
                     // Тут должен быть код для смены курса
+
+                    // Тут должен быть код для смены флага
+                    if (selectedValuteAbb == "EUR") { // Костыль для флага ЕС т.к. на сайте его нет 
+                        $(currentCurrencyBlock).find("img").attr("src", "/img/EuFlag.png");
+                        $(currentCurrencyBlock).find("img").attr("alt", "ЕС Флаг");
+                        $(menu).css("display", "none")
+                        return
+                    }
+
+                    $.getJSON('countries.json').then(function (countries) {
+                        let body = countries[selectedValuteAbb]
+                        // так же alt добавлять
+                    })
 
                     //
                     $(menu).css("display", "none")
@@ -224,11 +238,6 @@ $(document).ready(function () {
                 console.log("nothing")
             }
         })
-
-
-
     })
-
-
 
 });
