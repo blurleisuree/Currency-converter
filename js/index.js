@@ -1,5 +1,31 @@
 $(document).ready(function () {
 
+    // Установка значений по умолчанию
+    const output1 = $(".currency-block__number")[0],
+    output2 =  $(".currency-block__number")[1];
+
+        $.getJSON(
+            'https://www.cbr-xml-daily.ru/latest.js',
+            function (data) {
+                if (typeof fx !== "undefined" && fx.rates) {
+                    fx.rates = data.rates;
+                    fx.base = data.base;
+                } else {
+                    var fxSetup = {
+                        rates: data.rates,
+                        base: data.base
+                    }
+                }
+            }
+        ).then(function (rates) {
+            let result = fx(output1.placeholder).from("USD").to("RUB");
+            result = result.toFixed(2)
+            if (result[result.length - 1] == 0) {
+                result = result - result[result.length - 1] // удаление нуля на конце
+            }
+            output2.placeholder = result
+        })
+
     // Вставка даты последнего обновления базы данных ----------------------------------
 
     const date = $(".converter__date")[0];
@@ -210,8 +236,8 @@ $(document).ready(function () {
 
                     $.getJSON('countries.json').then(function (countries) {
                         let body = countries[selectedValuteAbb]
-                        // так же alt добавлять
                     })
+                    // так же alt добавлять
 
                     //
                     $(menu).css("display", "none")
