@@ -263,23 +263,32 @@ $(document).ready(function () {
                         let currencyBlock1Output = $(".currency-block__number")[0],
                             currencyBlock2Output = $(".currency-block__number")[1];
 
-                        let currentInputvalue;
-                        if ($(menu).css("top") == "0px") {
-                            currentInputValue = currencyBlock1Output.value
-                        } else {
-                            currentInputValue = currencyBlock2Output.value
-                        }
+                        let currentInputValue = currencyBlock1Output.value;
+                        // if ($(menu).css("top") == "0px") {
+                        //     currentInputValue = currencyBlock1Output.value
+                        // } else {
+                        //     currentInputValue = currencyBlock2Output.value
+                        // }
+
+                        console.log(selectedValuteAbb, nextBlockAbb.text(), currentInputValue)
 
                         let result = fx(currentInputValue).from(`${selectedValuteAbb}`).to(`${nextBlockAbb.text()}`)
-                        result = result.toFixed(2)
+                        if (result > 1) {
+                            result = result.toFixed(2)
+                        } else {
+                            result = result.toFixed(3)
+                        }
+                        
                         if (result[result.length - 1] == 0) {
                             result = result - result[result.length - 1] // удаление нуля на конце
                         }
-                        if ($(menu).css("top") == "0px") {
-                            currencyBlock2Output.value = result
-                        } else {
-                            currencyBlock1Output.value = result
-                        }
+
+                        // if ($(menu).css("top") == "0px") {
+                        //     currencyBlock2Output.value = result
+                        // } else {
+                        //     currencyBlock1Output.value = result
+                        // }
+                        currencyBlock2Output.value = result
 
                         // Тут должен быть код для смены флага
                         if (selectedValuteAbb == "EUR") { // Костыль для флага ЕС т.к. на сайте его нет 
