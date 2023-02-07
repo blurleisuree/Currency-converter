@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+console.log("test")
+
     // Установка значений по умолчанию
     // const output1 = $(".currency-block__number")[0],
     //     output2 = $(".currency-block__number")[1];
