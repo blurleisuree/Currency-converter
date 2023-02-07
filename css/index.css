@@ -244,6 +244,7 @@ body {
     position: absolute;
     flex-direction: column;
     display: none;
+    z-index: 999;
 
     background-color: rgb(65, 65, 65);
     overflow-y: scroll;
