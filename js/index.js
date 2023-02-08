@@ -23,7 +23,7 @@ $(document).ready(function () {
                 second: 'numeric'
             }
             dateJson = dateJson.toLocaleString("ru", options)
-            
+
             dateJson = $(date).text() + dateJson;
             $(date).text(dateJson)
         }
@@ -47,7 +47,7 @@ $(document).ready(function () {
                 }
             }
         )
-        
+
         // Объявление всех переменных и функций ------------------------------------------
 
         const inputList = $("input"),
@@ -181,7 +181,54 @@ $(document).ready(function () {
 
         // Swap ----------------------------------------------------------------
 
-        
+        const swapBtn = $(".swap-btn");
+
+        swapBtn.css("transition", "all 0.25s ease-out");
+        let click = false, // Проверка был ли клик
+            rotate = 0;
+
+        swapBtn.hover(function () {
+            rotate += 90
+            $(this).css("transform", `rotate(${rotate}deg)`);
+        }, function () {
+            if (click == true) {
+                click = false // Обнуление
+                return
+            }
+            rotate -= 90
+            $(this).css("transform", `rotate(${rotate}deg)`);
+        })
+
+        swapBtn.click(function () {
+            leftBlockSwap();
+
+            // Тут должен быть скрипт для свапа курсов валют
+
+            if (click == true) { // Чтобы клики подряд правильно отображались
+                rotate += 180
+            } else {
+                rotate += 90;
+            }
+            $(swapBtn).css("transform", `rotate(${rotate}deg)`);
+            click = true;
+        })
+
+        let leftBlockSwap = () => {
+            let interim; // Промежуточная перменная
+
+            let currencyBlock1 = $(".currency-block")[0],
+                currencyBlock2 = $(".currency-block")[1];
+
+            interim = currencyBlock2;
+            $(".converter__currencies-wrapper").append(currencyBlock1)
+            $(".converter__currencies-wrapper").prepend(interim)
+
+            // Смена аттрибута для меню
+            let dataCurrencyBlockList = $(".currency-block__left");
+            $(dataCurrencyBlockList[0]).attr("data-attr", 1);
+            $(dataCurrencyBlockList[1]).attr("data-attr", 2);
+
+        }
     })()
 
     // Swap --------------------------------------------------------------------------
