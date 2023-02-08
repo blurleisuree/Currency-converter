@@ -52,13 +52,12 @@ $(document).ready(function () {
 
         const inputList = $("input"),
             currencyBlockList = $(".currency-block"),
-            // currencyBlockLeftList = $(".currency-block__left"),
-            currencyCodeList = $(".currency-block__abb"),
-            currencyNameList = $(".currency-block__name-text"),
             flagList = $(".currency-block__flag"),
             menu = $(".valute-menu");
 
-            let currencyBlockLeftList = $('.currency-block__left')
+            let currencyBlockLeftList = $('.currency-block__left'),
+            currencyCodeList = $(".currency-block__abb"),
+            currencyNameList = $(".currency-block__name-text");
 
         let currentCode1,
             currentCode2;
@@ -128,7 +127,7 @@ $(document).ready(function () {
 
             $(menu).css("display", "flex");
             // Определение над каким блоком открыть меню
-            if ($(block).attr("data-index") == 1) {
+            if ($(block).attr("data-index") == 0) {
                 $(menu).css("top", "0px");
             } else {
                 $(menu).css("bottom", "0px");
@@ -142,7 +141,11 @@ $(document).ready(function () {
                     let siblingBlock = $(`[data-index="${$(e.target).closest(".currency-block").attr('data-index')}"]`) // Ищет аттрибут блока по которому был клик и по этому аттрибуту находит нужный блок
                     openMenu(siblingBlock)
                 } else {
-                    if ($(menu).is(e.target) || $(menu).has(e.target).length === 1) { // Проверка клика на меню
+                    if ($(menu).is(e.target)) { // В том случае если клик по меню но не по его элементам 
+                        return
+                    }
+                    if ($(menu).has(e.target).length === 1) { // Проверка клика на меню
+
                         // Тут должен быть код для флага
 
                         // Установка новых значений code & name в блок ---------------------------------------------------
@@ -226,14 +229,16 @@ $(document).ready(function () {
             $(currencyBlockList[0]).prepend(interim)
             
             currencyBlockLeftList = $(".currency-block__left"); // Обновление списка оберток
+            currencyCodeList = $(".currency-block__abb");
+            currencyNameList = $(".currency-block__name-text");
         }
 
-        // Динамический ввод 
+        // Динамический ввод ---------------------------------------------------------
 
         inputList.keyup(function () {
             let currentBlockIndex = $(this).closest(".currency-block").attr("data-index");
 
-            if (currentBlockIndex == 1) {       // Определяет в каком блоке запись
+            if (currentBlockIndex == 0) {       // Определяет в каком блоке запись
                 currentCode1 = getCurrentCode(currencyBlockList[0]);
                 currentCode2 = getCurrentCode(currencyBlockList[1]);
 
