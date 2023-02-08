@@ -23,7 +23,7 @@ $(document).ready(function () {
                 second: 'numeric'
             }
             dateJson = dateJson.toLocaleString("ru", options)
-
+            
             dateJson = $(date).text() + dateJson;
             $(date).text(dateJson)
         }
@@ -47,7 +47,7 @@ $(document).ready(function () {
                 }
             }
         )
-
+        
         // Объявление всех переменных и функций ------------------------------------------
 
         const inputList = $("input"),
@@ -144,17 +144,33 @@ $(document).ready(function () {
                     openMenu(siblingBlock)
                 } else {
                     if ($(menu).is(e.target) || $(menu).has(e.target).length === 1) { // Проверка клика на меню
-                        // Тут должен быть код для подсчета курса
                         // Тут должен быть код для флага
 
+                        // Установка новых значений code & name в блок ---------------------------------------------------
                         let selectedItem = $(e.target).closest(".valute-menu__item"),
-                            selectedValuteCode = $(selectedItem).find(".valute-menu__abb").text();
+                            selectedValuteCode = $(selectedItem).find(".valute-menu__abb").text(),
+                            selectedValuteName = $(selectedItem).find(".valute-menu__name").text()
 
-                            console.log(selectedValuteCode)
+                        if ($(menu).css("top") == "0px") {      // Проверка на каком из блоков был выбор
+                            $(currencyCodeList[0]).text(selectedValuteCode)
+                            $(currencyNameList[0]).text(selectedValuteName)
+                        } else {
+                            $(currencyCodeList[1]).text(selectedValuteCode)
+                            $(currencyNameList[1]).text(selectedValuteName)
+                        }
+
+                        currentCode1 = getCurrentCode(currencyBlockList[0]);
+                        currentCode2 = getCurrentCode(currencyBlockList[1]);
+
+                        // Подсчет и установка курса -----------------------------------------------------------------------
+
+                        let currentRate = getRate(currentCode1, currentCode2, $(inputList[0]).val())
+                        $(inputList[1]).val(currentRate)
+
                     }
                     $(menu).css("display", "none");
                 }
-            } else {
+            } else {        // Код открытия меню
                 if (currencyBlockList.is(e.target) ||
                     currencyBlockList.has(e.target).length === 1) {
                     let selectedBlock = $(e.target).closest(".currency-block")[0];
@@ -163,6 +179,9 @@ $(document).ready(function () {
             }
         })
 
+        // Swap ----------------------------------------------------------------
+
+        
     })()
 
     // Swap --------------------------------------------------------------------------
