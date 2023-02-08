@@ -150,7 +150,7 @@ $(document).ready(function () {
                         let selectedItem = $(e.target).closest(".valute-menu__item"),
                             selectedValuteCode = $(selectedItem).find(".valute-menu__abb").text();
 
-                            console.log(selectedValuteCode)
+                       
                     }
                     $(menu).css("display", "none");
                 }
