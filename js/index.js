@@ -52,10 +52,13 @@ $(document).ready(function () {
 
         const inputList = $("input"),
             currencyBlockList = $(".currency-block"),
+            // currencyBlockLeftList = $(".currency-block__left"),
             currencyCodeList = $(".currency-block__abb"),
             currencyNameList = $(".currency-block__name-text"),
             flagList = $(".currency-block__flag"),
             menu = $(".valute-menu");
+
+            let currencyBlockLeftList = $('.currency-block__left')
 
         let currentCode1,
             currentCode2;
@@ -75,10 +78,6 @@ $(document).ready(function () {
 
         function getCurrentCode(block) {
             return $(block).find(".currency-block__abb").text()
-        }
-
-        function getCurrentValue(block) {
-            return $(block).find("input").val()
         }
 
         // Установка курса по умолчанию ---------------------------------------------------
@@ -138,8 +137,8 @@ $(document).ready(function () {
 
         $(document).click(function (e) {
             if ($(menu).css("display") == "flex") { // Проверка открыто ли меню
-                if (currencyBlockList.is(e.target) ||
-                    currencyBlockList.has(e.target).length === 1) { // Проверка кликa на соседний блок
+                if (currencyBlockLeftList.is(e.target) ||
+                    currencyBlockLeftList.has(e.target).length === 1) { // Проверка кликa на соседний блок
                     let siblingBlock = $(`[data-index="${$(e.target).closest(".currency-block").attr('data-index')}"]`) // Ищет аттрибут блока по которому был клик и по этому аттрибуту находит нужный блок
                     openMenu(siblingBlock)
                 } else {
@@ -171,8 +170,8 @@ $(document).ready(function () {
                     $(menu).css("display", "none");
                 }
             } else {        // Код открытия меню
-                if (currencyBlockList.is(e.target) ||
-                    currencyBlockList.has(e.target).length === 1) {
+                if (currencyBlockLeftList.is(e.target) ||
+                    currencyBlockLeftList.has(e.target).length === 1) {
                     let selectedBlock = $(e.target).closest(".currency-block")[0];
                     openMenu(selectedBlock)
                 }
@@ -202,8 +201,14 @@ $(document).ready(function () {
         swapBtn.click(function () {
             leftBlockSwap();
 
-            // Тут должен быть скрипт для свапа курсов валют
+            // Обновление курса
+            currentCode1 = getCurrentCode(currencyBlockList[0]);
+            currentCode2 = getCurrentCode(currencyBlockList[1]);
 
+            currentRate = getRate(currentCode1, currentCode2, $(inputList[0]).val())
+            $(inputList[1]).val(currentRate)
+
+            // Поворот
             if (click == true) { // Чтобы клики подряд правильно отображались
                 rotate += 180
             } else {
@@ -214,21 +219,39 @@ $(document).ready(function () {
         })
 
         let leftBlockSwap = () => {
-            let interim; // Промежуточная перменная
+            // Смена местами обертки валюты 
 
-            let currencyBlock1 = $(".currency-block")[0],
-                currencyBlock2 = $(".currency-block")[1];
-
-            interim = currencyBlock2;
-            $(".converter__currencies-wrapper").append(currencyBlock1)
-            $(".converter__currencies-wrapper").prepend(interim)
-
-            // Смена аттрибута для меню
-            let dataCurrencyBlockList = $(".currency-block__left");
-            $(dataCurrencyBlockList[0]).attr("data-attr", 1);
-            $(dataCurrencyBlockList[1]).attr("data-attr", 2);
-
+            let interim = $(currencyBlockLeftList[1]); // Промежуточная переменная
+            $(currencyBlockList[1]).prepend(currencyBlockLeftList[0])
+            $(currencyBlockList[0]).prepend(interim)
+            
+            currencyBlockLeftList = $(".currency-block__left"); // Обновление списка оберток
         }
+
+        // Динамический ввод 
+
+        inputList.keyup(function () {
+            let currentBlockIndex = $(this).closest(".currency-block").attr("data-index");
+
+            if (currentBlockIndex == 1) {       // Определяет в каком блоке запись
+                currentCode1 = getCurrentCode(currencyBlockList[0]);
+                currentCode2 = getCurrentCode(currencyBlockList[1]);
+
+                currentRate = getRate(currentCode1, currentCode2, $(inputList[0]).val())
+
+                $(inputList[1]).val(currentRate)
+            } else {
+                currentCode1 = getCurrentCode(currencyBlockList[1]);
+                currentCode2 = getCurrentCode(currencyBlockList[0]);
+
+                currentRate = getRate(currentCode1, currentCode2, $(inputList[1]).val())
+
+                $(inputList[0]).val(currentRate)
+            }
+
+        })
+
+
     })()
 
     // Swap --------------------------------------------------------------------------
