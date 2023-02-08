@@ -1,0 +1,487 @@
+{
+    "AUD": {
+        "name": "Австралия",
+        "url": "https://img.icons8.com/color/2x/australia-circular.png"
+    },
+    "EUR": {"name": "Евросоюз", "url": "/img/EuFlag.png"},
+    "AZN": {
+        "name": "Азербайджан",
+        "url": "https://img.icons8.com/color/2x/azerbaijan-circular.png"
+    },
+    "ALL": {
+        "name": "Албания",
+        "url": "https://img.icons8.com/color/2x/albania-circular.png"
+    },
+    "DZD": {
+        "name": "Алжир",
+        "url": "https://img.icons8.com/color/2x/algeria-circular.png"
+    },
+    "USD": {
+        "name": "США",
+        "url": "https://img.icons8.com/color/2x/usa-circular.png"
+    },
+    "XCD": "Сент-Китс и Невис",
+    "AOA": {
+        "name": "Ангола",
+        "url": "https://img.icons8.com/color/2x/angola-circular.png"
+    },
+    "SYP": "Арабская Сирийская Республика",
+    "ARS": {
+        "name": "Аргентина",
+        "url": "https://img.icons8.com/color/2x/argentina-circular.png"
+    },
+    "AMD": {
+        "name": "Армения",
+        "url": "https://img.icons8.com/color/2x/armenia-circular.png"
+    },
+    "AWG": "Аруба",
+    "AFN": {
+        "name": "Афганистан",
+        "url": "https://img.icons8.com/color/2x/afghanistan-flag-circle.png"
+    },
+    "BSD": "Багамские острова",
+    "BDT": {
+        "name": "Бангладеш",
+        "url": "https://img.icons8.com/color/2x/bangladesh-circular.png"
+    },
+    "BBD": {
+        "name": "Барбадос",
+        "url": "https://img.icons8.com/color/2x/barbados-circular.png"
+    },
+    "BHD": "Бахрейн",
+    "BYN": {
+        "name": "Беларусь",
+        "url": "https://img.icons8.com/color/2x/belarus-circular.png"
+    },
+    "BZD": "Белиз",
+    "XOF": {
+        "name": "Того",
+        "url": "https://img.icons8.com/color/2x/togo-circular.png"
+    },
+    "BMD": "Бермуды",
+    "BGN": {
+        "name": "Болгария",
+        "url": "https://img.icons8.com/color/2x/bulgaria-circular.png"
+    },
+    "BOB": {
+        "name": "Боливия",
+        "url": "https://img.icons8.com/color/2x/bolivia-circular.png"
+    },
+    "BAM": {
+        "name": "Босния и Герцеговина",
+        "url": "https://img.icons8.com/color/2x/bosnia-and-herzegovina-circular.png"
+    },
+    "BWP": "Ботсванавана",
+    "BRL": {
+        "name": "Бразилия",
+        "url": "https://img.icons8.com/color/2x/brazil-circular.png"
+    },
+    "BND": "Бруней",
+    "BIF": {
+        "name": "Бурунди",
+        "url": "https://img.icons8.com/color/2x/burundi-circular.png"
+    },
+    "BTN": "Бутан",
+    "INR": {
+        "name": "Индия",
+        "url": "https://img.icons8.com/color/2x/india-circular.png"
+    },
+    "VUV": "Вануату",
+    "GBP": {
+        "name": "Великобритания",
+        "url": "https://img.icons8.com/color/2x/great-britain-circular.png"
+    },
+    "HUF": {
+        "name": "Венгрия",
+        "url": "https://img.icons8.com/color/2x/hungary-circular.png"
+    },
+    "VEF": {
+        "name": "Венесуэла",
+        "url": "https://img.icons8.com/color/2x/venezuela-circular.png"
+    },
+    "VND": {
+        "name": "Вьетнам",
+        "url": "https://img.icons8.com/color/2x/vietnam-circular.png"
+    },
+    "GMD": "Габмия",
+    "XAF": "Экваториальная Гвинея",
+    "HTG": "Гаити",
+    "GYD": {
+        "name": "Гайана",
+        "url": "https://img.icons8.com/color/2x/guyana-circular.png"
+    },
+    "GHS": "Гана",
+    "GTQ": {
+        "name": "Гватемала",
+        "url": "https://img.icons8.com/color/2x/guatemala-circular.png"
+    },
+    "GNF": "Гвинея",
+    "GIP": "Гибралтар",
+    "HNL": {
+        "name": "Гондурас",
+        "url": "https://img.icons8.com/color/2x/honduras-circular.png"
+    },
+    "HKD": {
+        "name": "Гонконг",
+        "url": "https://img.icons8.com/color/2x/hongkong-circular.png"
+    },
+    "DKK": {
+        "name": "Дания",
+        "url": "https://img.icons8.com/color/2x/denmark-circular.png"
+    },
+    "GEL": {
+        "name": "Грузия",
+        "url": "https://img.icons8.com/color/2x/georgia-circular.png"
+    },
+    "DJF": {
+        "name": "Джибути",
+        "url": "https://img.icons8.com/color/2x/djibouti-circular.png"
+    },
+    "DOP": {
+        "name": "Доминиканская Республика",
+        "url": "https://img.icons8.com/color/2x/dominican-republic-circular.png"
+    },
+    "EGP": {
+        "name": "Египет",
+        "url": "https://img.icons8.com/color/2x/egypt-circular.png"
+    },
+    "ZMW": "Замбия",
+    "MAD": "Марокко",
+    "ZWL": {
+        "name": "Зимбабве",
+        "url": "https://img.icons8.com/color/2x/zimbabwe-circular.png"
+    },
+    "ILS": {
+        "name": "Израиль",
+        "url": "https://img.icons8.com/color/2x/israel-circular.png"
+    },
+    "IDR": {
+        "name": "Индонезия",
+        "url": "https://img.icons8.com/color/2x/indonesia-circular.png"
+    },
+    "JOD": {
+        "name": "Иордания",
+        "url": "https://img.icons8.com/color/2x/jordan-circular.png"
+    },
+    "IQD": {
+        "name": "Ирак",
+        "url": "https://img.icons8.com/color/2x/iraq-circular.png"
+    },
+    "IRR": {
+        "name": "Иран",
+        "url": "https://img.icons8.com/color/2x/iran-circular.png"
+    },
+    "ISK": {
+        "name": "Исландия",
+        "url": "https://img.icons8.com/color/2x/iceland-circular.png"
+    },
+    "YER": {
+        "name": "Йемен",
+        "url": "https://img.icons8.com/color/2x/yemen-circular.png"
+    },
+    "CVE": "Кабо-Верде",
+    "KZT": {
+        "name": "Казахстан",
+        "url": "https://img.icons8.com/color/2x/kazakhstan-circular.png"
+    },
+    "KYD": "Каймановы острова",
+    "KHR": "Камбоджа",
+    "CAD": {
+        "name": "Канада",
+        "url": "https://img.icons8.com/color/2x/canada-circular.png"
+    },
+    "QAR": {
+        "name": "Катар",
+        "url": "https://img.icons8.com/color/2x/qatar-circular.png"
+    },
+    "KES": {
+        "name": "Кения",
+        "url": "https://img.icons8.com/color/2x/kenya-circular.png"
+    },
+    "CNY": {
+        "name": "Китай",
+        "url": "https://img.icons8.com/color/2x/china-circular.png"
+    },
+    "COP": {
+        "name": "Колумбия",
+        "url": "https://img.icons8.com/color/2x/colombia-circular.png"
+    },
+    "KMF": "Коморские острова",
+    "CDF": {
+        "name": "Конго",
+        "url": "https://img.icons8.com/color/2x/congo-circular.png"
+    },
+    "KPW": "Корея",
+    "CRC": {
+        "name": "Коста-Рика",
+        "url": "https://img.icons8.com/color/2x/casta-rica-circular.png"
+    },
+    "CUP": {
+        "name": "Куба",
+        "url": "https://img.icons8.com/color/2x/cuba-circular.png"
+    },
+    "KWD": {
+        "name": "Кувейт",
+        "url": "https://img.icons8.com/color/2x/kuwait-circular.png"
+    },
+    "KGS": {
+        "name": "Киргизия",
+        "url": "https://img.icons8.com/color/2x/kyrgyzstan-circular.png"
+    },
+    "ANG": "Синт-Мартен",
+    "LAK": {
+        "name": "Лаос",
+        "url": "https://img.icons8.com/color/2x/laos-circular.png"
+    },
+    "LSL": {
+        "name": "Лесото",
+        "url": "https://img.icons8.com/color/2x/lesotho-circular.png"
+    },
+    "ZAR": {
+        "name": "ЮАР",
+        "url": "https://img.icons8.com/color/2x/south-africa-circular.png"
+    },
+    "LRD": {
+        "name": "Либерия",
+        "url": "https://img.icons8.com/color/2x/liberia-circular.png"
+    },
+    "LBP": {
+        "name": "Ливан",
+        "url": "https://img.icons8.com/color/2x/lebanon-circular.png"
+    },
+    "LYD": {
+        "name": "Ливия",
+        "url": "https://img.icons8.com/color/2x/libya-circular.png"
+    },
+    "CHF": {
+        "name": "Швейцария",
+        "url": "https://img.icons8.com/color/2x/switzerland-circular.png"
+    },
+    "MUR": {
+        "name": "Маврикий",
+        "url": "https://img.icons8.com/color/2x/mauritius-circular.png"
+    },
+    "MRO": {
+        "name": "Мавритания",
+        "url": "https://img.icons8.com/color/2x/mauritania-circular.png"
+    },
+    "MGA": {
+        "name": "Мадагаскар",
+        "url": "https://img.icons8.com/color/2x/madagascar-circular.png"
+    },
+    "MOP": "Макао",
+    "MKD": {
+        "name": "Македония",
+        "url": "https://img.icons8.com/color/2x/macedonia-circular.png"
+    },
+    "MWK": {
+        "name": "Малави",
+        "url": "https://img.icons8.com/color/2x/malawi-circular.png"
+    },
+    "MYR": {
+        "name": "Малайзия",
+        "url": "https://img.icons8.com/color/2x/malaysia-circular.png"
+    },
+    "FKP": "Мальвинские острова",
+    "MVR": "Мальдивы",
+    "XDR": "Международный монетарный фонд",
+    "MXN": {
+        "name": "Мексика",
+        "url": "https://img.icons8.com/color/2x/mexico-circular.png"
+    },
+    "MZN": {
+        "name": "Мозамбик",
+        "url": "https://img.icons8.com/color/2x/mozambique-circular.png"
+    },
+    "MDL": {
+        "name": "Молдова",
+        "url": "https://img.icons8.com/color/2x/moldova-circular.png"
+    },
+    "MNT": {
+        "name": "Монголия",
+        "url": "https://img.icons8.com/color/2x/mongolia-circular.png"
+    },
+    "MMK": {
+        "name": "Мьянма",
+        "url": "https://img.icons8.com/color/2x/myanmar-circular.png"
+    },
+    "NAD": {
+        "name": "Намибия",
+        "url": "https://img.icons8.com/color/2x/namibia-circular.png"
+    },
+    "NPR": "Непал",
+    "NGN": "Нигерия",
+    "NIO": "Никарагуа",
+    "NZD": {
+        "name": "Новая Зеландия",
+        "url": "https://img.icons8.com/color/2x/new-zealand-circular.png"
+    },
+    "XPF": "Французская Полинезия",
+    "NOK": {
+        "name": "Норвегия",
+        "url": "https://img.icons8.com/color/2x/norway-circular.png"
+    },
+    "AED": {
+        "name": "Объединенные Арабские Эмираты",
+        "url": "https://img.icons8.com/color/2x/united-arab-emirates-circular.png"
+    },
+    "OMR": {
+        "name": "Оман",
+        "url": "https://img.icons8.com/color/2x/oman-circular.png"
+    },
+    "SHP": "Остров Святой Елены",
+    "PKR": {
+        "name": "Пакистан",
+        "url": "https://img.icons8.com/color/2x/pakistan-circular.png"
+    },
+    "PAB": {
+        "name": "Панама",
+        "url": "https://img.icons8.com/color/2x/panama-circular.png"
+    },
+    "PGK": "Папуа Новая Гвинея",
+    "PYG": "Парагвай",
+    "PEN": {
+        "name": "Перу",
+        "url": "https://img.icons8.com/color/2x/peru-circular.png"
+    },
+    "PLN": {
+        "name": "Польша",
+        "url": "https://img.icons8.com/color/2x/poland-circular.png"
+    },
+    "RUB": {
+        "name": "Российская Федерация",
+        "url": "https://img.icons8.com/color/2x/russian-federation-circular.png"
+    },
+    "RWF": "Руанда",
+    "RON": {
+        "name": "Румыния",
+        "url": "https://img.icons8.com/color/2x/romania-circular.png"
+    },
+    "SVC": {
+        "name": "Сальвадор",
+        "url": "https://img.icons8.com/color/2x/el-salvador-circular.png"
+    },
+    "WST": "Самоа",
+    "STD": "Сан-Томе и Принсипе",
+    "SAR": {
+        "name": "Саудовская Аравия",
+        "url": "https://img.icons8.com/color/2x/saudi-arabia-circular.png"
+    },
+    "SZL": {
+        "name": "Свазиленд",
+        "url": "https://img.icons8.com/color/2x/swaziland-circular.png"
+    },
+    "SCR": "Сейшельские Острова",
+    "RSD": {
+        "name": "Сербия",
+        "url": "https://img.icons8.com/color/2x/sernia-circular.png"
+    },
+    "SGD": {
+        "name": "Сингапур",
+        "url": "https://img.icons8.com/color/2x/singapore-circular.png"
+    },
+    "SBD": "Соломоновы острова",
+    "SOS": {
+        "name": "Сомали",
+        "url": "https://img.icons8.com/color/2x/somalia-circular.png"
+    },
+    "XUA": "Страны Африканского содружества",
+    "SDG": "Судан",
+    "SRD": "Суринам",
+    "SLL": {
+        "name": "Сьерра-Леоне",
+        "url": "https://img.icons8.com/color/2x/sierra-leone-circular.png"
+    },
+    "TJS": {
+        "name": "Таджикистан",
+        "url": "https://img.icons8.com/color/2x/tajikistan-circular.png"
+    },
+    "THB": {
+        "name": "Таиланд",
+        "url": "https://img.icons8.com/color/2x/thailand-circular.png"
+    },
+    "TWD": "Тайвань",
+    "TZS": {
+        "name": "Танзания",
+        "url": "https://img.icons8.com/color/2x/tanzania-circular.png"
+    },
+    "TOP": "Тонга",
+    "TTD": {
+        "name": "Тринидад и Тобаго",
+        "url": "https://img.icons8.com/color/2x/trinidad-and-tobago-circular.png"
+    },
+    "TND": {
+        "name": "Тунис",
+        "url": "https://img.icons8.com/color/2x/tunisia-circular.png"
+    },
+    "TMT": {
+        "name": "Туркменистан",
+        "url": "https://img.icons8.com/color/2x/turkmenistan-circular.png"
+    },
+    "TRY": {
+        "name": "Турция",
+        "url": "https://img.icons8.com/color/2x/turkey-circular.png"
+    },
+    "UGX": {
+        "name": "Уганда",
+        "url": "https://img.icons8.com/color/2x/uganda-circular.png"
+    },
+    "UZS": {
+        "name": "Узбекистан",
+        "url": "https://img.icons8.com/color/2x/uzbekistan-circular.png"
+    },
+    "UAH": {
+        "name": "Украина",
+        "url": "https://img.icons8.com/color/2x/ukraine-circular.png"
+    },
+    "UYU": {
+        "name": "Уругвай",
+        "url": "https://img.icons8.com/color/2x/uruguay-circular.png"
+    },
+    "FJD": "Фиджи",
+    "PHP": {
+        "name": "Филиппины",
+        "url": "https://img.icons8.com/color/2x/philippines-circular.png"
+    },
+    "HRK": {
+        "name": "Хорватия",
+        "url": "https://img.icons8.com/color/2x/croatia-circular.png"
+    },
+    "CZK": {
+        "name": "Чехия",
+        "url": "https://img.icons8.com/color/2x/czech-republic-circular.png"
+    },
+    "CLP": "Чили",
+    "SEK": {
+        "name": "Швеция",
+        "url": "https://img.icons8.com/color/2x/sweden-circular.png"
+    },
+    "LKR": {
+        "name": "Шри-Ланка",
+        "url": "https://img.icons8.com/color/2x/sri-lanka-circular.png"
+    },
+    "ERN": {
+        "name": "Эритрея",
+        "url": "https://img.icons8.com/color/2x/eritrea-circular.png"
+    },
+    "ETB": {
+        "name": "Эфиопия",
+        "url": "https://img.icons8.com/color/2x/ethiopia-circular.png"
+    },
+    "KRW": {
+        "name": "Южная Корея",
+        "url": "https://img.icons8.com/color/2x/south-korea-circular.png"
+    },
+    "SSP": {
+        "name": "Южный Судан",
+        "url": "https://img.icons8.com/color/2x/south-sudan-circular.png"
+    },
+    "JMD": {
+        "name": "Ямайка",
+        "url": "https://img.icons8.com/color/2x/jamaica-circular.png"
+    },
+    "JPY": {
+        "name": "Япония",
+        "url": "https://img.icons8.com/color/2x/japan-circular.png"
+    }
+}

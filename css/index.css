@@ -299,3 +299,10 @@ body {
     color: #ffe500;
     font-size: 15px;
 }
+.api-link {
+    color: white !important;
+    opacity: 0.3;
+    text-align: right;
+    margin-top: 100px;
+    text-decoration: underline !important;
+}
