@@ -12,7 +12,6 @@ $(document).ready(function () {
             console.log("error")
         },
         success: function (data) {
-            console.log(data.Timestamp)
             let dateJson = new Date(data.Timestamp)
             let options = {
                 year: 'numeric',
@@ -23,7 +22,6 @@ $(document).ready(function () {
                 minute: 'numeric',
                 second: 'numeric'
             }
-            console.log(data)
             dateJson = dateJson.toLocaleString("ru", options)
             dateJson = $(date).text() + dateJson;
 
