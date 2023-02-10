@@ -64,13 +64,21 @@ $(document).ready(function () {
 
         function getRate(code1, code2, value) {
             let rate = fx(value).from(code1).to(code2);
-            if (rate > 1) {     // Округление
+            if (rate > 1) {     // Проверка десятичное ли число
                 rate = rate.toFixed(2)
             } else {
-                rate = rate.toFixed(3)
-            };
-            if (rate[length - 1] == 0) {    // Фикс нуля на конце в десятичном числе
-                rate = rate - rate[length - 1];
+                rate = String(rate)
+                let n = rate.match(/\.(.{1})/)[1]   // Поиск первого символа после запятой
+                if (n > 0) {
+                    rate = +rate;
+                    rate = rate.toFixed(2)
+                } else {    // Если число очень маленькое
+                    let a = rate.search(/0([1-9])/)     // Поиск позиции первого ненулевого числа после нулей
+                    rate = +rate
+                    rate = rate.toFixed(a + 1)    // Округление до двух ненулевых чисел
+
+                    // Не работает для очень маленьких чисел 
+                }
             }
             return rate
         }
