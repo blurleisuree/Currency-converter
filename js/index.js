@@ -63,6 +63,10 @@ $(document).ready(function () {
             currentBlockIndex;
 
         function getRate(code1, code2, value) {
+            if (value == 0) {
+                return 
+            }
+            
             let rate = fx(value).from(code1).to(code2);
             if (rate > 1) {     // Проверка десятичное ли число
                 rate = rate.toFixed(2)
@@ -262,11 +266,27 @@ $(document).ready(function () {
                 currentCode1 = getCurrentCode(currencyBlockList[0]);
                 currentCode2 = getCurrentCode(currencyBlockList[1]);
 
+                if ($(inputList[0]).val() == '') {      // Проверка на отсутвие значения в input
+                    $(inputList[0]).attr("placeholder", 0) 
+
+                    $(inputList[1]).val('')
+                    $(inputList[1]).attr("placeholder", 0)
+                    return
+                }
+
                 currentRate = getRate(currentCode1, currentCode2, $(inputList[0]).val())
                 $(inputList[1]).val(currentRate)
             } else {
                 currentCode1 = getCurrentCode(currencyBlockList[1]);
                 currentCode2 = getCurrentCode(currencyBlockList[0]);
+
+                  if ($(inputList[1]).val() == '') {
+                    $(inputList[1]).attr("placeholder", 0)
+                    
+                    $(inputList[0]).val('')
+                    $(inputList[0]).attr("placeholder", 0)
+                    return
+                }
 
                 currentRate = getRate(currentCode1, currentCode2, $(inputList[1]).val())
                 $(inputList[0]).val(currentRate)
